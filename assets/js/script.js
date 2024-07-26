@@ -50,8 +50,8 @@ for (let i = 0; i < testimonialsItem.length; i++) {
 }
 
 // add click event to modal close button
-modalCloseBtn.addEventListener("click", testimonialsModalFunc);
-overlay.addEventListener("click", testimonialsModalFunc);
+// modalCloseBtn.addEventListener("click", testimonialsModalFunc);
+// overlay.addEventListener("click", testimonialsModalFunc);
 
 
 
@@ -136,6 +136,8 @@ for (let i = 0; i < formInputs.length; i++) {
 
 
 
+
+
 // page navigation variables
 const navigationLinks = document.querySelectorAll("[data-nav-link]");
 const pages = document.querySelectorAll("[data-page]");
@@ -157,3 +159,25 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
   });
 }
+
+
+
+
+
+document.getElementById('showResumeBtn').addEventListener('click', function() {
+  var pdfContainer = document.getElementById('resumePdfContainer');
+  if (pdfContainer.style.display === 'none' || pdfContainer.style.display === '') {
+    pdfContainer.style.display = 'block';
+  } else {
+    pdfContainer.style.display = 'none';
+  }
+});
+
+document.getElementById('resumeIframe').addEventListener('load', function() {
+  console.log('PDF loaded successfully.');
+});
+
+document.getElementById('resumeIframe').addEventListener('error', function() {
+  console.error('Failed to load PDF.');
+  alert('Failed to load PDF.');
+});
